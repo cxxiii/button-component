@@ -1,0 +1,93 @@
+$colors: (
+  "primary": var(--color-primary),
+  "secondary": var(--color-secondary),
+  "danger": var(--color-danger),
+);
+
+$sizes: (
+  "sm": 0.75rem 1rem,
+  "md": 1.5rem 2rem,
+  "lg": 2.25rem 3rem,
+);
+
+.Button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0rem 0.2rem 0.3rem rgba(51, 51, 51, 0.2);
+
+  padding: 1.5rem 2rem;
+  border: 0.1rem #000 solid;
+  border-radius: 0.3rem;
+
+  font-family: var(--display-font);
+  font-weight: var(--font-light);
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    color: #000;
+    background-color: #fff;
+  }
+
+  @each $name, $value in $colors {
+    &_color_#{$name} {
+      background-color: $value;
+      border: 0.1rem $value solid;
+
+      &:hover,
+      &:focus {
+        color: $value;
+        background-color: inherit;
+      }
+    }
+  }
+
+  @each $name, $value in $sizes {
+    &_size_#{$name} {
+      padding: $value;
+    }
+  }
+
+  &_variant_outline {
+    color: inherit;
+    background-color: inherit;
+
+    &:hover,
+    &:focus {
+      background-color: lightgray;
+    }
+  }
+
+  &_variant_text {
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      background-color: lightgray;
+    }
+  }
+
+  &_disableShadow {
+    box-shadow: none;
+  }
+
+  &_disabled {
+    outline: none;
+    box-shadow: none;
+    pointer-events: none;
+    border: none;
+    color: gray;
+    background-color: lightgray;
+  }
+}
