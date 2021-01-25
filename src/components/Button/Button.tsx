@@ -37,8 +37,10 @@ const Button: FunctionComponent<
     [styles[`Button_color_${color}`]]: color,
   });
 
+  const isDisabled = disabled ? true : false;
+
   return (
-    <button className={classNames} {...props}>
+    <button className={classNames} disabled={isDisabled} {...props}>
       {startIcon && <i className="material-icons start-icon">{startIcon}</i>}
       {children}
       {endIcon && <i className="material-icons end-icon">{endIcon}</i>}
