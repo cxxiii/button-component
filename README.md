@@ -11,3 +11,5 @@ A simple reusable Button component for React
 - Color can be set via `color`
   - Options: `primary`, `secondary`, `danger`
 - All normal button attributes are accessable as well
+
+### (Demo)[http://button-component-git-main.cxxiii.vercel.app/]
