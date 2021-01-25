@@ -1,4 +1,4 @@
-A simple reusable Button component for React
+A simple Button component for React
 
 ## Properties
 
